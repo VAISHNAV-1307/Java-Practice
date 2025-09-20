@@ -1,0 +1,27 @@
+package streams;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class StreamsPractice {
+
+    /*
+    1. Find Duplicate Elements
+    Given a array of integers, find all the elements that appear more than once.
+     */
+
+    public Map<Integer, Long> getDuplicateInt(int[] array) {
+
+        // {2, 1, 1, 2, 3, 4, 5}
+
+        return Arrays.stream(array)
+                .boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() > 1)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+}
