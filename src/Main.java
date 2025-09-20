@@ -7,8 +7,13 @@ public class Main {
 
         StreamsPractice streamsPractice = new StreamsPractice();
 
+        /*
         int[] array = {2, 1, 1, 2, 3, 4, 5};
-        Map<Integer, Long> result = streamsPractice.getDuplicateInt(array);
-        System.out.println(result);
+        Map<Integer, Long> duplicateInt = streamsPractice.getDuplicateInt(array);
+        System.out.println(duplicateInt);
+         */
+
+        Character vaishnav = streamsPractice.findFirstNonRepeatingChar("Vaishnav");
+        System.out.println(vaishnav);
     }
 }

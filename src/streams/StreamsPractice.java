@@ -1,7 +1,6 @@
 package streams;
 
-import java.util.Arrays;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -28,10 +27,15 @@ public class StreamsPractice {
     2. Find the first non-repeated character in a string using Streams.
      */
 
-    public Character findFirstNonRepeatingChar(String str){
+    public Character findFirstNonRepeatingChar(String str) {
         // "Vaishnav"
-
-
-        return null;
+        return str.toLowerCase().chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .entrySet()
+                .stream().filter(entry -> entry.getValue() == 1)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (c1, c2) -> c1, LinkedHashMap::new))
+                .firstEntry()
+                .getKey();
     }
 }
