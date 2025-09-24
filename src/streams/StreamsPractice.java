@@ -55,5 +55,13 @@ public class StreamsPractice {
         return str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting()));
     }
 
+    /*
+    5. Remove duplicate elements from a list.
+     */
+
+    public List<Integer> removeDuplicates(List<Integer> integers){
+        return integers.stream().distinct().toList();
+    }
+
 
 }

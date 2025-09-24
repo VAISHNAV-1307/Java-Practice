@@ -30,5 +30,12 @@ public class Main {
         System.out.println(result);
          */
 
+        /*
+        List<Integer> integers = streamsPractice.removeDuplicates(List.of(1, 1, 2, 2, 3, 2, 4, 4, 5, 6, 7, 2));
+        System.out.println(integers);
+         */
+
+
+
     }
 }
