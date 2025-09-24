@@ -38,4 +38,12 @@ public class StreamsPractice {
                 .firstEntry()
                 .getKey();
     }
+
+    /*
+    3. Given a list of integers, find the second-highest number.
+     */
+
+    public Integer findSecondHighestNumber(List<Integer> integers){
+        return integers.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElse(null);
+    }
 }
