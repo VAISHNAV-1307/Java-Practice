@@ -46,4 +46,14 @@ public class StreamsPractice {
     public Integer findSecondHighestNumber(List<Integer> integers){
         return integers.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElse(null);
     }
+
+    /*
+    4. Count the frequency of each character in a string.
+     */
+
+    public Map<Character, Long> countFrequencyOfEachChar(String str){
+        return str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+    }
+
+
 }

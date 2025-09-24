@@ -20,8 +20,15 @@ public class Main {
         System.out.println(vaishnav);
          */
 
+        /*
         Integer secondHighestNumber = streamsPractice.findSecondHighestNumber(List.of(2, 1, 5, 6, 9, 10, 3, 2));
         System.out.println(secondHighestNumber);
+         */
+
+        /*
+        Map<Character, Long> result = streamsPractice.countFrequencyOfEachChar("vaishnav");
+        System.out.println(result);
+         */
 
     }
 }
