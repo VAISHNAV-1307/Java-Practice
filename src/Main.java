@@ -35,7 +35,8 @@ public class Main {
         System.out.println(integers);
          */
 
-
+        Boolean result = streamsPractice.checkForAnagram("vaishnav", "vanhisav");
+        System.out.println(result);
 
     }
 }

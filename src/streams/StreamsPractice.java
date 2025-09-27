@@ -63,5 +63,15 @@ public class StreamsPractice {
         return integers.stream().distinct().toList();
     }
 
+    /*
+    6. Check if two strings are anagrams using Streams.
+     */
+
+    public Boolean checkForAnagram(String str1, String str2){
+        var collect1 = str1.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        var collect2 = str2.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return collect1.equals(collect2);
+    }
+
 
 }
