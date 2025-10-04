@@ -3,7 +3,6 @@ package streams;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class StreamsPractice {
 
@@ -43,7 +42,7 @@ public class StreamsPractice {
     3. Given a list of integers, find the second-highest number.
      */
 
-    public Integer findSecondHighestNumber(List<Integer> integers){
+    public Integer findSecondHighestNumber(List<Integer> integers) {
         return integers.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElse(null);
     }
 
@@ -51,7 +50,7 @@ public class StreamsPractice {
     4. Count the frequency of each character in a string.
      */
 
-    public Map<Character, Long> countFrequencyOfEachChar(String str){
+    public Map<Character, Long> countFrequencyOfEachChar(String str) {
         return str.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(c -> c, Collectors.counting()));
     }
 
@@ -59,7 +58,7 @@ public class StreamsPractice {
     5. Remove duplicate elements from a list.
      */
 
-    public List<Integer> removeDuplicates(List<Integer> integers){
+    public List<Integer> removeDuplicates(List<Integer> integers) {
         return integers.stream().distinct().toList();
     }
 
@@ -67,7 +66,7 @@ public class StreamsPractice {
     6. Check if two strings are anagrams using Streams.
      */
 
-    public Boolean checkForAnagram(String str1, String str2){
+    public Boolean checkForAnagram(String str1, String str2) {
         var collect1 = str1.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         var collect2 = str2.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         return collect1.equals(collect2);
